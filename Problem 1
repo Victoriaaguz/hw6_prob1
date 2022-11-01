@@ -1,0 +1,28 @@
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* searchBST(TreeNode* root, int val) {
+        TreeNode* temp = root; //creates a pointer of TreeNode called temp and points to root pointer 
+        while(temp != NULL){ // it loops till the pointer returns NUll 
+              if(temp->val == val){ // if temp pointing to theval equals the input val it returns temp
+                return temp;
+            }
+            else if(val < temp->val){ // if the input value is less than the temp pointing to val it goes to the left 
+                temp = temp->left;
+            }
+            else{         // if input val is greater than temp pointing values it goes right
+                temp = temp->right;
+            }
+        }
+        return NULL; // if temp does equal null it turns a Null value
+        }
+};
